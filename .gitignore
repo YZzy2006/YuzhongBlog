@@ -50,3 +50,8 @@ frontend/public/pets/*
 !frontend/public/pets/thumbs/
 frontend/public/pets/thumbs/*
 !frontend/public/pets/thumbs/codex-panda.webp
+
+# 日志与本地临时文件
+*.log
+.DS_Store
+*.local
