@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231e5eb6'/%3E%3Crect x='5' y='4' width='22' height='14' rx='2' fill='%23fff' opacity='.95'/%3E%3Crect x='6' y='5' width='20' height='12' rx='1' fill='%230f172a'/%3E%3Crect x='7' y='7' width='5' height='1.5' rx='.75' fill='%23c084fc' opacity='.7'/%3E%3Crect x='13' y='7' width='6' height='1.5' rx='.75' fill='%237dd3fc' opacity='.6'/%3E%3Crect x='7' y='10' width='8' height='1.5' rx='.75' fill='%2334d399' opacity='.7'/%3E%3Crect x='7' y='13' width='5' height='1.5' rx='.75' fill='%23fbbf24' opacity='.6'/%3E%3Cpath d='M3 18Q3 17 4 17L28 17Q29 17 29 18L29 22Q29 23 28 23L4 23Q3 23 3 22Z' fill='%23fff' opacity='.92'/%3E%3Crect x='4' y='22' width='24' height='2' rx='1' fill='%23fff' opacity='.4'/%3E%3C/svg%3E" />
+  <title>雨中的研发日志</title>
+  <style>
+    /* === 主内容默认隐藏，Vue 挂载后显示 === */
+    #app { opacity: 0; visibility: hidden; transition: opacity 0.6s ease, visibility 0.6s ease; }
+    html.app-ready #app { opacity: 1 !important; visibility: visible !important; }
+
+    /* === Loading Screen === */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #0f172a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loading-screen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Logo + Site Name */
+    .ld-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .ld-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+      animation: ld-logo-pulse 2s ease-in-out infinite;
+    }
+    .ld-logo svg { width: 36px; height: 36px; }
+    .ld-site-name {
+      font-family: "PingFang SC", "Songti SC", "SimSun", "宋体", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #e2e8f0;
+      letter-spacing: 2px;
+    }
+
+    /* Progress Bar */
+    .ld-progress-wrap {
+      width: 200px;
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .ld-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      border-radius: 2px;
+      animation: ld-progress 2s ease-in-out forwards;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Loading Text */
+    .ld-text {
+      font-size: 12px;
+      color: #64748b;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: ld-text-blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes ld-logo-pulse {
+      0%, 100% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.3); }
+      50% { box-shadow: 0 0 60px rgba(139, 92, 246, 0.5); }
+    }
+    @keyframes ld-progress {
+      0% { width: 0%; }
+      50% { width: 70%; }
+      100% { width: 100%; }
+    }
+    @keyframes ld-text-blink {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Dark mode loading bg */
+    @media (prefers-color-scheme: light) {
+      #loading-screen { background: #f8fafc; }
+      .ld-site-name { color: #1e293b; }
+      .ld-text { color: #94a3b8; }
+    }
+  </style>
+  <script src="/app-init.js"></script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="ld-header">
+      <div class="ld-logo">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="5" y="4" width="22" height="14" rx="2" fill="#fff" opacity=".95"/>
+          <rect x="6" y="5" width="20" height="12" rx="1" fill="#0f172a"/>
+          <rect x="7" y="7" width="5" height="1.5" rx=".75" fill="#c084fc" opacity=".7"/>
+          <rect x="13" y="7" width="6" height="1.5" rx=".75" fill="#7dd3fc" opacity=".6"/>
+          <rect x="7" y="10" width="8" height="1.5" rx=".75" fill="#34d399" opacity=".7"/>
+          <rect x="7" y="13" width="5" height="1.5" rx=".75" fill="#fbbf24" opacity=".6"/>
+          <path d="M3 18Q3 17 4 17L28 17Q29 17 29 18L29 22Q29 23 28 23L4 23Q3 23 3 22Z" fill="#fff" opacity=".92"/>
+        </svg>
+      </div>
+      <span class="ld-site-name">雨中的研发日志</span>
+    </div>
+    <div class="ld-progress-wrap">
+      <div class="ld-progress-bar"></div>
+    </div>
+    <span class="ld-text">Loading</span>
+  </div>
+
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+  <script src="/loading-fallback.js"></script>
+</body>
+</html>

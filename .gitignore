@@ -1,0 +1,45 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### YuzhonBlog - 敏感与构建产物（勿提交） ###
+# JAR 解压残留
+BOOT-INF/
+# 部署产物（含 app.jar、schema.sql 默认密码、前端构建产物）
+deploy/
+*.jar
+# 前端依赖与构建产物
+frontend/node_modules/
+frontend/dist/
+# 前端构建产物（含宠物图约 307MB）
+src/main/resources/static/

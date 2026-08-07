@@ -1,0 +1,614 @@
+/* ========================================
+   Admin Glassmorphism Theme
+   ======================================== */
+
+/* Admin pages use sans-serif for UI clarity */
+.admin-page {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', Arial, sans-serif;
+}
+
+.admin-page h1,
+.admin-page h2,
+.admin-page h3,
+.admin-page h4 {
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+/* --- Card --- */
+.admin-page .el-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.admin-page .el-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.admin-page .el-card__header {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  background: transparent;
+}
+
+.admin-page .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.admin-page .page-desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: #94a3b8;
+  margin-left: 8px;
+}
+
+/* --- Filter Section --- */
+.admin-page .filter-section {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.admin-page .filter-section .el-form-item {
+  margin-bottom: 0;
+}
+
+.admin-page .filter-section .el-form-item__label {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* --- Summary Bar --- */
+.admin-page .summary-bar {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* --- Table --- */
+.admin-page .el-table {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: transparent;
+}
+
+.admin-page .el-table th.el-table__cell {
+  background: rgba(59, 130, 246, 0.04) !important;
+  font-weight: 700;
+  color: #475569;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.admin-page .el-table td.el-table__cell {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  color: #334155;
+}
+
+.admin-page .el-table .el-table__row:hover > td {
+  background: rgba(59, 130, 246, 0.03) !important;
+}
+
+.admin-page .el-table__empty-block {
+  padding: 40px 0;
+}
+
+.admin-page .el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+/* --- Pagination --- */
+.admin-page .pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-page .el-pagination {
+  --el-pagination-bg-color: transparent;
+  --el-pagination-hover-color: #3b82f6;
+}
+
+.admin-page .el-pager li {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 0 2px;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.admin-page .el-pager li:hover {
+  color: #3b82f6;
+}
+
+.admin-page .el-pager li.is-active {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* --- Button --- */
+.admin-page .el-button--primary {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.admin-page .el-button--primary:hover {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+  transform: translateY(-1px);
+}
+
+.admin-page .el-button--default {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.admin-page .el-button--default:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.admin-page .el-button--danger {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.admin-page .el-button--danger:hover {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.admin-page .el-button--success {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.admin-page .el-button--success:hover {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.admin-page .el-button--warning {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.admin-page .el-button--warning:hover {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.admin-page .el-button--small {
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.admin-page .el-button.is-circle {
+  border-radius: 50%;
+}
+
+/* --- Tag --- */
+.admin-page .el-tag {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+}
+
+.admin-page .el-tag--info {
+  background: rgba(100, 116, 139, 0.1);
+  color: #64748b;
+}
+
+.admin-page .el-tag--success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.admin-page .el-tag--warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.admin-page .el-tag--danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+/* --- Dialog --- */
+.admin-page .el-dialog,
+.el-dialog {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+.admin-page .el-dialog__header,
+.el-dialog__header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  margin-right: 0;
+}
+
+.admin-page .el-dialog__title,
+.el-dialog__title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #1e293b;
+}
+
+.admin-page .el-dialog__body,
+.el-dialog__body {
+  padding: 20px 24px;
+}
+
+.admin-page .el-dialog__footer,
+.el-dialog__footer {
+  padding: 16px 24px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* --- Drawer --- */
+.admin-page .el-drawer__header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.admin-page .el-drawer__body {
+  padding: 20px 24px;
+  background: #f8fafc;
+}
+
+/* --- Input --- */
+.admin-page .el-input .el-input__wrapper {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: none;
+  padding: 4px 12px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.admin-page .el-input .el-input__wrapper:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.admin-page .el-input .el-input__wrapper.is-focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: #fff;
+}
+
+/* Filter section inputs */
+.admin-page .filter-section .el-input .el-input__wrapper {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 1px 11px;
+}
+
+/* --- Textarea --- */
+.admin-page .el-textarea .el-textarea__inner {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.admin-page .el-textarea .el-textarea__inner:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* --- Select --- */
+.admin-page .el-select .el-input__wrapper {
+  border-radius: 12px;
+}
+
+/* --- Switch --- */
+.admin-page .el-switch.is-checked .el-switch__core {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* --- Input Number --- */
+.admin-page .el-input-number {
+  border-radius: 12px;
+}
+
+.admin-page .el-input-number .el-input__wrapper {
+  border-radius: 12px;
+}
+
+/* --- Code --- */
+.admin-page code {
+  font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+  background: rgba(59, 130, 246, 0.06);
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* --- Page layout helpers --- */
+.admin-page .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.admin-page .page-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.admin-page .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Page toolbar (used in PhotoWall, etc) --- */
+.admin-page .page-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-page .toolbar-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #1e293b;
+}
+
+.admin-page .toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- Message (toast notification) --- */
+.el-message {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.4) !important;
+  padding: 12px 20px !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.el-message .el-message__content {
+  line-height: 1.4;
+}
+
+.el-message--success {
+  border-left: 3px solid #22c55e !important;
+  background: rgba(240, 253, 244, 0.9) !important;
+}
+
+.el-message--error {
+  border-left: 3px solid #ef4444 !important;
+  background: rgba(254, 242, 242, 0.9) !important;
+}
+
+.el-message--warning {
+  border-left: 3px solid #f59e0b !important;
+  background: rgba(255, 251, 235, 0.9) !important;
+}
+
+.el-message--info {
+  border-left: 3px solid #3b82f6 !important;
+  background: rgba(238, 242, 255, 0.9) !important;
+}
+
+/* --- Message Box --- */
+.el-message-box {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* --- El-Image --- */
+.admin-page .el-image {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ========================================
+   Night Mode Overrides
+   ======================================== */
+body.body-night .admin-page .el-card {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.body-night .admin-page .el-card__header {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+body.body-night .admin-page .card-header {
+  color: #e2e8f0;
+}
+
+body.body-night .admin-page .filter-section {
+  background: rgba(30, 41, 59, 0.4);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+body.body-night .admin-page .el-table th.el-table__cell {
+  background: rgba(59, 130, 246, 0.08) !important;
+  color: #94a3b8;
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+body.body-night .admin-page .el-table td.el-table__cell {
+  color: #cbd5e1;
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+body.body-night .admin-page .el-table .el-table__row:hover > td {
+  background: rgba(59, 130, 246, 0.05) !important;
+}
+
+body.body-night .admin-page .el-table {
+  --el-table-bg-color: transparent;
+  --el-table-tr-bg-color: transparent;
+  --el-table-header-bg-color: transparent;
+  --el-table-row-hover-bg-color: rgba(59, 130, 246, 0.05);
+}
+
+body.body-night .admin-page .el-input .el-input__wrapper {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.body-night .admin-page .el-input .el-input__wrapper.is-focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+body.body-night .admin-page .el-input .el-input__inner {
+  color: #e2e8f0;
+}
+
+body.body-night .admin-page .el-input .el-input__inner::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+body.body-night .admin-page .el-textarea .el-textarea__inner {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+}
+
+body.body-night .admin-page .el-button--default {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+
+body.body-night .admin-page .el-button--default:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+body.body-night .admin-page .el-dialog,
+body.body-night .el-dialog {
+  background: rgba(15, 23, 42, 0.98) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.body-night .admin-page .el-dialog__title,
+body.body-night .el-dialog__title {
+  color: #e2e8f0;
+}
+
+body.body-night .admin-page .el-dialog__header,
+body.body-night .el-dialog__header {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+body.body-night .admin-page .el-dialog__footer,
+body.body-night .el-dialog__footer {
+  border-top-color: rgba(255, 255, 255, 0.06);
+}
+
+body.body-night .admin-page .toolbar-title {
+  color: #e2e8f0;
+}
+
+body.body-night .admin-page .page-header h2 {
+  color: #e2e8f0;
+}
+
+body.body-night .admin-page .page-desc {
+  color: #64748b;
+}
+
+body.body-night .admin-page .el-tag--info {
+  background: rgba(100, 116, 139, 0.15);
+  color: #94a3b8;
+}
+
+body.body-night .el-message {
+  background: rgba(30, 41, 59, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.06) !important;
+  color: #e2e8f0;
+}
+
+body.body-night .el-message--success {
+  border-left-color: #4ade80 !important;
+  background: rgba(30, 41, 59, 0.92) !important;
+}
+
+body.body-night .el-message--error {
+  border-left-color: #f87171 !important;
+  background: rgba(30, 41, 59, 0.92) !important;
+}
+
+body.body-night .el-message--warning {
+  border-left-color: #fbbf24 !important;
+  background: rgba(30, 41, 59, 0.92) !important;
+}
+
+body.body-night .el-message--info {
+  border-left-color: #60a5fa !important;
+  background: rgba(30, 41, 59, 0.92) !important;
+}
+
+body.body-night .el-message__content {
+  color: #e2e8f0;
+}
+
+body.body-night .el-message-box {
+  background: rgba(15, 23, 42, 0.98) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.body-night .admin-page code {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+}
+
+body.body-night .admin-page .filter-section .el-form-item__label {
+  color: #94a3b8;
+}
