@@ -6,8 +6,11 @@ import struct
 from pathlib import Path
 from PIL import Image
 
-CURSOR_DIR = Path(r"D:\单机游戏修改\PaperPlane_Cursors整合\v1.2")
-OUTPUT_DIR = Path(r"D:\IDEA.code\YuzhonBlog\frontend\public\cursors")
+# 源 cursor 目录通过环境变量 CURSOR_SOURCE_DIR 提供（避免硬编码本地路径）
+CURSOR_DIR = Path(os.environ.get("CURSOR_SOURCE_DIR", ""))
+if not CURSOR_DIR.exists():
+    raise SystemExit("请设置 CURSOR_SOURCE_DIR 环境变量指向 .cur 源目录")
+OUTPUT_DIR = Path(__file__).resolve().parent.parent / "public" / "cursors"
 OUTPUT_SIZE = (32, 32)  # Standard web cursor size
 
 # Cursor mapping: file -> cursor type
