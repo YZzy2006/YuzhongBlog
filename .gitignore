@@ -43,3 +43,10 @@ frontend/node_modules/
 frontend/dist/
 # 前端构建产物（含宠物图约 307MB）
 src/main/resources/static/
+
+# 宠物图（仅保留默认 codex-panda，其余由部署流程提供，避免仓库膨胀）
+frontend/public/pets/*
+!frontend/public/pets/codex-panda.webp
+!frontend/public/pets/thumbs/
+frontend/public/pets/thumbs/*
+!frontend/public/pets/thumbs/codex-panda.webp
