@@ -427,45 +427,45 @@ cd .. && mvn package -DskipTests        # 打包后端 JAR
 
 <div align="center">
 
-**首页**
+**展示图 1**
 
-![首页](docs/screenshots/01.png)
+![展示图 1](docs/screenshots/01.png)
 
-**文章**
+**展示图 2**
 
-![文章](docs/screenshots/02.png)
+![展示图 2](docs/screenshots/02.png)
 
-**作品集**
+**展示图 3**
 
-![作品集](docs/screenshots/03.png)
+![展示图 3](docs/screenshots/03.png)
 
-**相册**
+**展示图 4**
 
-![相册](docs/screenshots/04.png)
+![展示图 4](docs/screenshots/04.png)
 
-**音乐**
+**展示图 5**
 
-![音乐](docs/screenshots/05.png)
+![展示图 5](docs/screenshots/05.png)
 
-**AI 助手**
+**展示图 6**
 
-![AI 助手](docs/screenshots/06.png)
+![展示图 6](docs/screenshots/06.png)
 
-**动态**
+**展示图 7**
 
-![动态](docs/screenshots/07.png)
+![展示图 7](docs/screenshots/07.png)
 
-**管理后台**
+**展示图 8**
 
-![管理后台](docs/screenshots/08.png)
+![展示图 8](docs/screenshots/08.png)
 
-**设置**
+**展示图 9**
 
-![设置](docs/screenshots/09.png)
+![展示图 9](docs/screenshots/09.png)
 
-**更多**
+**展示图 10**
 
-![更多](docs/screenshots/10.png)
+![展示图 10](docs/screenshots/10.png)
 
 </div>
 
